@@ -61,7 +61,7 @@ static int8_t Send_buf[8] = {0};
 
 //define the play time for each song (in millisecs) and the volume (0-30)
 const int playTime = 10000;
-const int volume = 15;
+const int volume = 25;
 
 //global variables to time song duration
 bool mp3Playing;
@@ -153,7 +153,7 @@ void loop() {
 //Tells the MP3 player to play a particular file
 void mp3Play(int trackNumber){
   startTime=millis();                   //note the start time
-  Mp3Command(CMD_SET_VOLUME, 0x000F);   //set the volume
+  Mp3Command(CMD_SET_VOLUME, volume);   //set the volume
   Mp3Command(0x0F,trackNumber);         //start the track
   mp3Playing=true;                      //flag that a track is playing
 }

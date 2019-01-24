@@ -144,7 +144,7 @@ void loop() {
     doorSwitch.resetAvailable();
   }
 
-  //if a song has been playing more that "playTime", it's time stop
+  //if a song has been playing longer than "playTime", it's time to stop
   if (mp3Playing && millis()-startTime > playTime){
     fadeOut();
   }
